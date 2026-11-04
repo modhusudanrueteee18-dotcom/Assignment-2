@@ -1,0 +1,7 @@
+{
+  "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+  "lora_r": 16,
+  "lora_alpha": 32,
+  "best_dev_acc": 0.9366666666666666,
+  "adapter_path": "best_adapter"
+}

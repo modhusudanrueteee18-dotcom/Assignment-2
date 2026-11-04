@@ -1,0 +1,8 @@
+{
+  "gamma": 0.5,
+  "delta": 2.0,
+  "context_window": 4,
+  "key_size_bytes": 32,
+  "algorithm": "KGW-hard-greenlist",
+  "reference": "Kirchenbauer et al. (2023) arXiv:2301.10226"
+}
