@@ -1,0 +1,641 @@
+(.venv) 
+Modhusudan@DESKTOP-MHIRS6B MINGW64 /d/LLM/Assignment 2
+$ bash run_me.sh
+   Assignment 2 - Environment Setup
+[1/7] Project directory:
+/d/LLM/Assignment 2
+[2/7] Virtual environment already exists.
+[3/7] Activating virtual environment...
+[4/7] Upgrading pip...
+Requirement already satisfied: pip in .\.venv\lib\site-packages (26.2.2)
+[5/7] Installing requirements...
+Requirement already satisfied: torch>=2.14.1 in .\.venv\lib\site-packages (from -r requirements.txt (line 1)) (2.14.1+cu132)
+Requirement already satisfied: torchvision>=0.29.2 in .\.venv\lib\site-packages (from -r requirements.txt (line 2)) (0.29.2+cu132)
+Requirement already satisfied: torchaudio in .\.venv\lib\site-packages (from -r requirements.txt (line 3)) (2.11.1)
+Requirement already satisfied: transformers>=4.40.0 in .\.venv\lib\site-packages (from -r requirements.txt (line 4)) (5.20.2)
+Requirement already satisfied: peft>=0.10.0 in .\.venv\lib\site-packages (from -r requirements.txt (line 5)) (0.21.2)
+Requirement already satisfied: trl>=0.8.0 in .\.venv\lib\site-packages (from -r requirements.txt (line 6)) (1.14.2)
+Requirement already satisfied: accelerate>=0.28.0 in .\.venv\lib\site-packages (from -r requirements.txt (line 7)) (1.15.0)
+Requirement already satisfied: datasets>=2.18.0 in .\.venv\lib\site-packages (from -r requirements.txt (line 8)) (5.1.0)
+Requirement already satisfied: bitsandbytes>=0.43.0 in .\.venv\lib\site-packages (from -r requirements.txt (line 9)) (0.50.2)
+Requirement already satisfied: sentencepiece>=0.2.0 in .\.venv\lib\site-packages (from -r requirements.txt (line 10)) (0.2.2)
+Requirement already satisfied: protobuf>=3.20.0 in .\.venv\lib\site-packages (from -r requirements.txt (line 11)) (7.36.2)
+Requirement already satisfied: numpy>=1.24.0 in .\.venv\lib\site-packages (from -r requirements.txt (line 12)) (2.2.6)
+Requirement already satisfied: scipy>=1.11.0 in .\.venv\lib\site-packages (from -r requirements.txt (line 13)) (1.15.3)
+Requirement already satisfied: scikit-learn>=1.3.0 in .\.venv\lib\site-packages (from -r requirements.txt (line 14)) (1.7.2)
+Requirement already satisfied: pandas>=2.0.0 in .\.venv\lib\site-packages (from -r requirements.txt (line 15)) (2.3.3)
+Requirement already satisfied: tqdm>=4.66.0 in .\.venv\lib\site-packages (from -r requirements.txt (line 16)) (4.70.1)
+Requirement already satisfied: filelock in .\.venv\lib\site-packages (from torch>=2.14.1->-r requirements.txt (line 1)) (4.1.0)
+Requirement already satisfied: typing-extensions>=4.10.0 in .\.venv\lib\site-packages (from torch>=2.14.1->-r requirements.txt (line 1)) (4.16.0)
+Requirement already satisfied: setuptools>=77.0.3 in .\.venv\lib\site-packages (from torch>=2.14.1->-r requirements.txt (line 1)) (84.2.1)
+Requirement already satisfied: sympy>=1.13.3 in .\.venv\lib\site-packages (from torch>=2.14.1->-r requirements.txt (line 1)) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in .\.venv\lib\site-packages (from torch>=2.14.1->-r requirements.txt (line 1)) (3.4.2)
+Requirement already satisfied: jinja2 in .\.venv\lib\site-packages (from torch>=2.14.1->-r requirements.txt (line 1)) (3.1.6)
+Requirement already satisfied: fsspec>=0.8.5 in .\.venv\lib\site-packages (from torch>=2.14.1->-r requirements.txt (line 1)) (2026.7.0)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in .\.venv\lib\site-packages (from torchvision>=0.29.2->-r requirements.txt (line 2)) (12.3.0)
+Requirement already satisfied: huggingface-hub<3.0,>=1.31.0 in .\.venv\lib\site-packages (from transformers>=4.40.0->-r requirements.txt (line 4)) (2.4.0)
+Requirement already satisfied: packaging>=20.0 in .\.venv\lib\site-packages (from transformers>=4.40.0->-r requirements.txt (line 4)) (26.3)
+Requirement already satisfied: pyyaml>=5.1 in .\.venv\lib\site-packages (from transformers>=4.40.0->-r requirements.txt (line 4)) (6.0.3)
+Requirement already satisfied: regex>=2025.10.22 in .\.venv\lib\site-packages (from transformers>=4.40.0->-r requirements.txt (line 4)) (2026.9.29)
+Requirement already satisfied: tokenizers<0.24.0,>=0.23.1 in .\.venv\lib\site-packages (from transformers>=4.40.0->-r requirements.txt (line 4)) (0.23.3)
+Requirement already satisfied: typer in .\.venv\lib\site-packages (from transformers>=4.40.0->-r requirements.txt (line 4)) (0.27.3)
+Requirement already satisfied: safetensors>=0.8.0 in .\.venv\lib\site-packages (from transformers>=4.40.0->-r requirements.txt (line 4)) (0.8.0)
+Requirement already satisfied: click<9.0.0,>=8.4.2 in .\.venv\lib\site-packages (from huggingface-hub<3.0,>=1.31.0->transformers>=4.40.0->-r requirements.txt (line 4)) (8.5.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.6.0 in .\.venv\lib\site-packages (from huggingface-hub<3.0,>=1.31.0->transformers>=4.40.0->-r requirements.txt (line 4)) (1.8.0)
+Requirement already satisfied: httpx2<3,>=2.0.0 in .\.venv\lib\site-packages (from huggingface-hub<3.0,>=1.31.0->transformers>=4.40.0->-r requirements.txt (line 4)) (2.14.0)
+Requirement already satisfied: tomli>=1.1.0 in .\.venv\lib\site-packages (from huggingface-hub<3.0,>=1.31.0->transformers>=4.40.0->-r requirements.txt (line 4)) (2.5.0)
+Requirement already satisfied: anyio>=4.10 in .\.venv\lib\site-packages (from httpx2<3,>=2.0.0->huggingface-hub<3.0,>=1.31.0->transformers>=4.40.0->-r requirements.txt (line 4)) (4.15.1)
+Requirement already satisfied: httpcore2==2.14.0 in .\.venv\lib\site-packages (from httpx2<3,>=2.0.0->huggingface-hub<3.0,>=1.31.0->transformers>=4.40.0->-r requirements.txt (line 4)) (2.14.0)
+Requirement already satisfied: idna>=3.18 in .\.venv\lib\site-packages (from httpx2<3,>=2.0.0->huggingface-hub<3.0,>=1.31.0->transformers>=4.40.0->-r requirements.txt (line 4)) (3.20)
+Requirement already satisfied: truststore>=0.10 in .\.venv\lib\site-packages (from httpx2<3,>=2.0.0->huggingface-hub<3.0,>=1.31.0->transformers>=4.40.0->-r requirements.txt (line 4)) (0.10.5)
+Requirement already satisfied: h11>=0.16 in .\.venv\lib\site-packages (from httpcore2==2.14.0->httpx2<3,>=2.0.0->huggingface-hub<3.0,>=1.31.0->transformers>=4.40.0->-r requirements.txt (line 4)) (0.16.0)
+Requirement already satisfied: psutil in .\.venv\lib\site-packages (from peft>=0.10.0->-r requirements.txt (line 5)) (7.2.2)
+Requirement already satisfied: pyarrow>=24.0.0 in .\.venv\lib\site-packages (from datasets>=2.18.0->-r requirements.txt (line 8)) (25.0.1)
+Requirement already satisfied: dill<0.4.2,>=0.3.0 in .\.venv\lib\site-packages (from datasets>=2.18.0->-r requirements.txt (line 8)) (0.4.1)
+Requirement already satisfied: xxhash in .\.venv\lib\site-packages (from datasets>=2.18.0->-r requirements.txt (line 8)) (4.0.2)
+Requirement already satisfied: multiprocess<0.70.20 in .\.venv\lib\site-packages (from datasets>=2.18.0->-r requirements.txt (line 8)) (0.70.19)
+Requirement already satisfied: aiohttp!=4.0.0a0,!=4.0.0a1 in .\.venv\lib\site-packages (from fsspec[http]<=2026.7.0,>=2023.1.0->datasets>=2.18.0->-r requirements.txt (line 8)) (3.14.5)
+Requirement already satisfied: joblib>=1.2.0 in .\.venv\lib\site-packages (from scikit-learn>=1.3.0->-r requirements.txt (line 14)) (1.6.0)
+Requirement already satisfied: threadpoolctl>=3.1.0 in .\.venv\lib\site-packages (from scikit-learn>=1.3.0->-r requirements.txt (line 14)) (3.7.0)
+Requirement already satisfied: python-dateutil>=2.8.2 in .\.venv\lib\site-packages (from pandas>=2.0.0->-r requirements.txt (line 15)) (3.0.0)
+Requirement already satisfied: pytz>=2020.1 in .\.venv\lib\site-packages (from pandas>=2.0.0->-r requirements.txt (line 15)) (2026.6)
+Requirement already satisfied: tzdata>=2022.7 in .\.venv\lib\site-packages (from pandas>=2.0.0->-r requirements.txt (line 15)) (2026.6)
+Requirement already satisfied: colorama in .\.venv\lib\site-packages (from tqdm>=4.66.0->-r requirements.txt (line 16)) (0.4.6)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in .\.venv\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.7.0,>=2023.1.0->datasets>=2.18.0->-r requirements.txt (line 8)) (2.7.1)
+Requirement already satisfied: aiosignal>=1.4.0 in .\.venv\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.7.0,>=2023.1.0->datasets>=2.18.0->-r requirements.txt (line 8)) (1.4.0)
+Requirement already satisfied: async-timeout<6.0,>=4.0 in .\.venv\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.7.0,>=2023.1.0->datasets>=2.18.0->-r requirements.txt (line 8)) (5.0.1)
+Requirement already satisfied: attrs>=17.3.0 in .\.venv\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.7.0,>=2023.1.0->datasets>=2.18.0->-r requirements.txt (line 8)) (26.1.0)
+Requirement already satisfied: frozenlist>=1.1.1 in .\.venv\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.7.0,>=2023.1.0->datasets>=2.18.0->-r requirements.txt (line 8)) (1.8.0)
+Requirement already satisfied: multidict<8.0,>=4.5 in .\.venv\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.7.0,>=2023.1.0->datasets>=2.18.0->-r requirements.txt (line 8)) (7.1.0)
+Requirement already satisfied: propcache>=0.2.0 in .\.venv\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.7.0,>=2023.1.0->datasets>=2.18.0->-r requirements.txt (line 8)) (0.5.4)
+Requirement already satisfied: yarl<2.0,>=1.25.1 in .\.venv\lib\site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.7.0,>=2023.1.0->datasets>=2.18.0->-r requirements.txt (line 8)) (1.25.1)
+Requirement already satisfied: exceptiongroup>=1.0.2 in .\.venv\lib\site-packages (from anyio>=4.10->httpx2<3,>=2.0.0->huggingface-hub<3.0,>=1.31.0->transformers>=4.40.0->-r requirements.txt (line 4)) (1.3.1)
+Requirement already satisfied: cloudpickle>=3.0 in .\.venv\lib\site-packages (from joblib>=1.2.0->scikit-learn>=1.3.0->-r requirements.txt (line 14)) (3.1.2)
+Requirement already satisfied: six>=1.6 in .\.venv\lib\site-packages (from python-dateutil>=2.8.2->pandas>=2.0.0->-r requirements.txt (line 15)) (1.17.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in .\.venv\lib\site-packages (from sympy>=1.13.3->torch>=2.14.1->-r requirements.txt (line 1)) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in .\.venv\lib\site-packages (from jinja2->torch>=2.14.1->-r requirements.txt (line 1)) (3.0.4)
+Requirement already satisfied: shellingham>=1.3.0 in .\.venv\lib\site-packages (from typer->transformers>=4.40.0->-r requirements.txt (line 4)) (1.5.4)
+Requirement already satisfied: rich>=13.8.0 in .\.venv\lib\site-packages (from typer->transformers>=4.40.0->-r requirements.txt (line 4)) (15.0.0)
+Requirement already satisfied: annotated-doc>=0.0.2 in .\.venv\lib\site-packages (from typer->transformers>=4.40.0->-r requirements.txt (line 4)) (0.0.5)
+Requirement already satisfied: markdown-it-py>=2.2.0 in .\.venv\lib\site-packages (from rich>=13.8.0->typer->transformers>=4.40.0->-r requirements.txt (line 4)) (4.2.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in .\.venv\lib\site-packages (from rich>=13.8.0->typer->transformers>=4.40.0->-r requirements.txt (line 4)) (2.21.0)
+Requirement already satisfied: mdurl~=0.1 in .\.venv\lib\site-packages (from markdown-it-py>=2.2.0->rich>=13.8.0->typer->transformers>=4.40.0->-r requirements.txt (line 4)) (0.1.2)
+[6/7] Checking Python version...
+Python 3.10.11
+[7/7] Checking PyTorch...
+PyTorch: 2.14.1+cu132
+CUDA available: True
+   Environment Setup Completed
+Root: /d/LLM/Assignment 2
+Activated .venv (Windows)
+Installing/verifying dependencies...
+
+  TASK 1: Debiasing QA                    
+--- Task 1: Training ---
+============================================
+ Task 1: Training Debiasing System
+ Output: /d/LLM/Assignment 2/out/Q1
+============================================
+W1031 08:57:27.322000 30932 Lib\site-packages\torch\utils\flop_counter.py:113] triton not found; flop counting will not work for triton kernels
+2026-10-31 08:57:27,840 | INFO | Using device: cuda
+2026-10-31 08:57:27,840 | INFO | Loading tokenizer from Qwen/Qwen2.5-1.5B-Instruct
+2026-10-31 08:57:28,152 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-10-31 08:57:28,394 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 08:57:28,626 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-31 08:57:29,038 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-10-31 08:57:29,043 | INFO | Loading base model from Qwen/Qwen2.5-1.5B-Instruct
+2026-10-31 08:57:29,279 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 338/338 [00:01<00:00, 194.64it/s]
+2026-10-31 08:57:31,819 | INFO | HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+trainable params: 2,179,072 || all params: 1,545,893,376 || trainable%: 0.1410
+2026-10-31 08:57:31,900 | INFO | Loaded 3000 examples from D:/LLM/Assignment 2/Q1/data/public\q1_bias_train.jsonl
+2026-10-31 08:57:31,903 | INFO | Loaded 600 examples from D:/LLM/Assignment 2/Q1/data/public\q1_bias_dev.jsonl
+2026-10-31 08:58:19,345 | INFO | Epoch 1/3 | Step 50/375 | Loss: 0.4467
+2026-10-31 08:59:06,429 | INFO | Epoch 1/3 | Step 100/375 | Loss: 0.3010
+2026-10-31 08:59:55,024 | INFO | Epoch 1/3 | Step 150/375 | Loss: 0.2120
+2026-10-31 09:00:42,846 | INFO | Epoch 1/3 | Step 200/375 | Loss: 0.1735
+2026-10-31 09:01:31,729 | INFO | Epoch 1/3 | Step 250/375 | Loss: 0.1490
+2026-10-31 09:02:18,749 | INFO | Epoch 1/3 | Step 300/375 | Loss: 0.1270
+2026-10-31 09:03:07,715 | INFO | Epoch 1/3 | Step 350/375 | Loss: 0.1103
+2026-10-31 09:03:50,262 | INFO | Epoch 1 | Train Loss: 0.1044 | Dev Acc: 0.9200
+2026-10-31 09:03:50,598 | INFO | HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 09:03:50,619 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json?%2FQwen%2FQwen2.5-1.5B-Instruct%2Fresolve%2Fmain%2Fconfig.json=&etag=%22f81ead14ab072d65a07817f83a3ee0e5a1890d10%22 "HTTP/1.1 200 OK"
+2026-10-31 09:03:50,854 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/revision/main "HTTP/1.1 200 OK"
+2026-10-31 09:03:50,968 | INFO |   → New best model saved (acc=0.9200)
+2026-10-31 09:04:38,190 | INFO | Epoch 2/3 | Step 50/375 | Loss: 0.0070
+2026-10-31 09:05:27,260 | INFO | Epoch 2/3 | Step 100/375 | Loss: 0.0055
+2026-10-31 09:06:22,789 | INFO | Epoch 2/3 | Step 150/375 | Loss: 0.0037
+2026-10-31 09:07:11,049 | INFO | Epoch 2/3 | Step 200/375 | Loss: 0.0050
+2026-10-31 09:07:58,476 | INFO | Epoch 2/3 | Step 250/375 | Loss: 0.0049
+2026-10-31 09:08:47,299 | INFO | Epoch 2/3 | Step 300/375 | Loss: 0.0065
+2026-10-31 09:09:32,498 | INFO | Epoch 2/3 | Step 350/375 | Loss: 0.0070
+2026-10-31 09:10:15,396 | INFO | Epoch 2 | Train Loss: 0.0069 | Dev Acc: 0.9367
+2026-10-31 09:10:15,699 | INFO | HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 09:10:15,710 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json?%2FQwen%2FQwen2.5-1.5B-Instruct%2Fresolve%2Fmain%2Fconfig.json=&etag=%22f81ead14ab072d65a07817f83a3ee0e5a1890d10%22 "HTTP/1.1 200 OK"
+2026-10-31 09:10:15,944 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/revision/main "HTTP/1.1 200 OK"
+2026-10-31 09:10:16,045 | INFO |   → New best model saved (acc=0.9367)
+2026-10-31 09:11:02,115 | INFO | Epoch 3/3 | Step 50/375 | Loss: 0.0007
+2026-10-31 09:11:51,979 | INFO | Epoch 3/3 | Step 100/375 | Loss: 0.0045
+2026-10-31 09:12:43,141 | INFO | Epoch 3/3 | Step 150/375 | Loss: 0.0031
+2026-10-31 09:13:28,908 | INFO | Epoch 3/3 | Step 200/375 | Loss: 0.0023
+2026-10-31 09:14:17,616 | INFO | Epoch 3/3 | Step 250/375 | Loss: 0.0019
+2026-10-31 09:15:06,981 | INFO | Epoch 3/3 | Step 300/375 | Loss: 0.0034
+2026-10-31 09:15:53,706 | INFO | Epoch 3/3 | Step 350/375 | Loss: 0.0030
+2026-10-31 09:16:39,074 | INFO | Epoch 3 | Train Loss: 0.0028 | Dev Acc: 0.9233
+2026-10-31 09:16:39,386 | INFO | HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 09:16:39,397 | INFO | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B-Instruct/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json?%2FQwen%2FQwen2.5-1.5B-Instruct%2Fresolve%2Fmain%2Fconfig.json=&etag=%22f81ead14ab072d65a07817f83a3ee0e5a1890d10%22 "HTTP/1.1 200 OK"
+2026-10-31 09:16:39,651 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/revision/main "HTTP/1.1 200 OK"
+2026-10-31 09:16:39,752 | INFO | Training complete. Best dev acc: 0.9367
+2026-10-31 09:16:39,753 | INFO | Model saved to D:/LLM/Assignment 2/out/Q1
+Training complete. Model saved to: /d/LLM/Assignment 2/out/Q1
+--- Task 1: Bias Inference (dev) ---
+============================================
+ Task 1 Inference | mode=bias
+ Input:  /d/LLM/Assignment 2/Q1/data/public/q1_bias_dev.jsonl
+ Output: /d/LLM/Assignment 2/predictions/Q1/output_bias.jsonl
+============================================
+W1031 09:16:45.904000 26204 Lib\site-packages\torch\utils\flop_counter.py:113] triton not found; flop counting will not work for triton kernels
+2026-10-31 09:16:46,823 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-10-31 09:16:47,089 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 09:16:47,331 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-31 09:16:47,728 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-10-31 09:16:47,734 | INFO | Loading base model: Qwen/Qwen2.5-1.5B-Instruct
+2026-10-31 09:16:47,970 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 338/338 [00:01<00:00, 191.45it/s]
+2026-10-31 09:16:50,714 | INFO | HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-10-31 09:16:50,715 | INFO | Loading LoRA adapter from: D:/LLM/Assignment 2/out/Q1\best_adapter
+2026-10-31 09:16:50,912 | INFO | Running bias inference on D:/LLM/Assignment 2/Q1/data/public/q1_bias_dev.jsonl
+2026-10-31 09:16:53,615 | INFO |   Processed 80 / 600
+2026-10-31 09:16:55,983 | INFO |   Processed 160 / 600
+2026-10-31 09:16:58,446 | INFO |   Processed 240 / 600
+2026-10-31 09:17:01,204 | INFO |   Processed 320 / 600
+2026-10-31 09:17:03,858 | INFO |   Processed 400 / 600
+2026-10-31 09:17:06,203 | INFO |   Processed 480 / 600
+2026-10-31 09:17:08,547 | INFO |   Processed 560 / 600
+2026-10-31 09:17:09,785 | INFO | Bias predictions written to D:/LLM/Assignment 2/predictions/Q1/output_bias.jsonl
+Done. Predictions at: /d/LLM/Assignment 2/predictions/Q1/output_bias.jsonl
+W1031 09:17:14.385000 8460 Lib\site-packages\torch\utils\flop_counter.py:113] triton not found; flop counting will not work for triton kernels
+2026-10-31 09:17:15,381 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-10-31 09:17:15,673 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 09:17:15,926 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-31 09:17:16,436 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-10-31 09:17:16,442 | INFO | Loading base model: Qwen/Qwen2.5-1.5B-Instruct
+2026-10-31 09:17:16,687 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 338/338 [00:01<00:00, 183.90it/s]
+2026-10-31 09:17:19,482 | INFO | HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-10-31 09:17:19,482 | INFO | Loading LoRA adapter from: D:/LLM/Assignment 2/out/Q1\best_adapter
+2026-10-31 09:17:19,674 | INFO | Running bias inference on D:/LLM/Assignment 2/Q1/data/public/q1_bias_dev.jsonl
+2026-10-31 09:17:22,440 | INFO |   Processed 80 / 600
+2026-10-31 09:17:24,811 | INFO |   Processed 160 / 600
+2026-10-31 09:17:27,269 | INFO |   Processed 240 / 600
+2026-10-31 09:17:30,020 | INFO |   Processed 320 / 600
+2026-10-31 09:17:32,664 | INFO |   Processed 400 / 600
+2026-10-31 09:17:35,015 | INFO |   Processed 480 / 600
+2026-10-31 09:17:37,361 | INFO |   Processed 560 / 600
+2026-10-31 09:17:38,597 | INFO | Bias predictions written to D:/LLM/Assignment 2/predictions/Q1/dev_bias.jsonl
+--- Task 1: QA Inference (dev) ---
+W1031 09:17:43.252000 34724 Lib\site-packages\torch\utils\flop_counter.py:113] triton not found; flop counting will not work for triton kernels
+2026-10-31 09:17:44,469 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-10-31 09:17:44,708 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 09:17:44,944 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-31 09:17:45,415 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-10-31 09:17:45,418 | INFO | Loading base model: Qwen/Qwen2.5-1.5B-Instruct
+2026-10-31 09:17:45,663 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 338/338 [00:01<00:00, 194.08it/s]
+2026-10-31 09:17:48,337 | INFO | HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-10-31 09:17:48,338 | INFO | Loading LoRA adapter from: D:/LLM/Assignment 2/out/Q1\best_adapter
+2026-10-31 09:17:48,514 | INFO | Running QA inference on D:/LLM/Assignment 2/Q1/data/public/q1_qa_dev.jsonl
+2026-10-31 09:17:52,565 | INFO |   Processed 80 / 100
+2026-10-31 09:17:53,640 | INFO | QA predictions written to D:/LLM/Assignment 2/predictions/Q1/dev_qa.jsonl
+--- Task 1: Evaluation ---
+
+=== Task 1 BBQ Results ===
+Category                          BBQ_c    acc_a    acc_d    s_DIS    s_AMB
+---------------------------------------------------------------------------
+Age                              0.4395   0.4600   0.5600  -0.0811   0.0600
+Gender_identity                  0.3386   0.5000   0.4400   0.1628  -0.1000
+Nationality                      0.3800   0.3200   0.5200   0.0000   0.0800
+Physical_appearance              0.3502   0.5200   0.5600   0.2195   0.1600
+Race_ethnicity                   0.4571   0.6000   0.5200   0.0857  -0.1200
+SES                              0.4486   0.5600   0.5800   0.1628  -0.0800
+---------------------------------------------------------------------------
+S_BBQ (average)                  0.4023
+
+=== Task 1 QA Accuracy: 0.1300 (13/100) ===
+
+  TASK 2: Watermarking                    
+--- Task 2: Setup ---
+============================================
+ Task 2: Setup
+ Output: /d/LLM/Assignment 2/out/Q2
+============================================
+2026-10-31 09:17:55,265 | INFO | Secret key generated and saved to: D:/LLM/Assignment 2/out/Q2\watermark_key.bin
+2026-10-31 09:17:55,265 | INFO | Key (hex): 5aac3ca9cf642664d4ad0715a90aac3bcc0db3176af6075afabfb64a34123ace
+2026-10-31 09:17:55,266 | INFO | Setup complete.
+Setup complete.
+--- Task 2: Generate (seed=42) ---
+============================================
+ Task 2: Generate Watermarked Text
+ Input:  /d/LLM/Assignment 2/Q2/data/public/q2_prompts_dev.jsonl
+ Output: /d/LLM/Assignment 2/out/Q2/generated_42.jsonl
+ Seed:   42
+============================================
+2026-10-31 09:17:58,248 | INFO | Device: cuda
+2026-10-31 09:17:58,249 | INFO | Secret key loaded (32 bytes)
+2026-10-31 09:17:58,249 | INFO | Loading Qwen/Qwen2.5-1.5B
+2026-10-31 09:17:58,510 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-10-31 09:17:58,758 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 09:17:59,000 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-31 09:17:59,449 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-10-31 09:17:59,696 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 338/338 [00:01<00:00, 187.48it/s]
+2026-10-31 09:18:02,806 | INFO | HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-10-31 09:18:02,808 | INFO | Generating with seed=42 → D:/LLM/Assignment 2/out/Q2\generated_42.jsonl
+2026-10-31 09:18:11,035 | INFO |   q2_prompts_dev_00000: 200 tokens
+2026-10-31 09:18:19,178 | INFO |   q2_prompts_dev_00001: 200 tokens
+2026-10-31 09:18:26,396 | INFO |   q2_prompts_dev_00002: 200 tokens
+2026-10-31 09:18:34,654 | INFO |   q2_prompts_dev_00003: 200 tokens
+2026-10-31 09:18:41,867 | INFO |   q2_prompts_dev_00004: 200 tokens
+2026-10-31 09:18:49,427 | INFO |   q2_prompts_dev_00005: 200 tokens
+2026-10-31 09:18:57,649 | INFO |   q2_prompts_dev_00006: 200 tokens
+2026-10-31 09:19:05,182 | INFO |   q2_prompts_dev_00007: 200 tokens
+2026-10-31 09:19:11,688 | INFO |   q2_prompts_dev_00008: 200 tokens
+2026-10-31 09:19:20,074 | INFO |   q2_prompts_dev_00009: 200 tokens
+2026-10-31 09:19:27,770 | INFO |   q2_prompts_dev_00010: 200 tokens
+2026-10-31 09:19:35,054 | INFO |   q2_prompts_dev_00011: 200 tokens
+2026-10-31 09:19:42,506 | INFO |   q2_prompts_dev_00012: 200 tokens
+2026-10-31 09:19:50,712 | INFO |   q2_prompts_dev_00013: 200 tokens
+2026-10-31 09:19:59,041 | INFO |   q2_prompts_dev_00014: 200 tokens
+2026-10-31 09:20:07,090 | INFO |   q2_prompts_dev_00015: 200 tokens
+2026-10-31 09:20:14,794 | INFO |   q2_prompts_dev_00016: 200 tokens
+2026-10-31 09:20:22,812 | INFO |   q2_prompts_dev_00017: 200 tokens
+2026-10-31 09:20:30,358 | INFO |   q2_prompts_dev_00018: 200 tokens
+2026-10-31 09:20:38,765 | INFO |   q2_prompts_dev_00019: 200 tokens
+2026-10-31 09:20:46,763 | INFO |   q2_prompts_dev_00020: 200 tokens
+2026-10-31 09:20:54,085 | INFO |   q2_prompts_dev_00021: 200 tokens
+2026-10-31 09:21:01,719 | INFO |   q2_prompts_dev_00022: 200 tokens
+2026-10-31 09:21:10,136 | INFO |   q2_prompts_dev_00023: 200 tokens
+2026-10-31 09:21:18,471 | INFO |   q2_prompts_dev_00024: 200 tokens
+2026-10-31 09:21:25,774 | INFO |   q2_prompts_dev_00025: 200 tokens
+2026-10-31 09:21:33,561 | INFO |   q2_prompts_dev_00026: 200 tokens
+2026-10-31 09:21:41,766 | INFO |   q2_prompts_dev_00027: 200 tokens
+2026-10-31 09:21:49,903 | INFO |   q2_prompts_dev_00028: 200 tokens
+2026-10-31 09:21:57,837 | INFO |   q2_prompts_dev_00029: 200 tokens
+2026-10-31 09:22:05,758 | INFO |   q2_prompts_dev_00030: 200 tokens
+2026-10-31 09:22:13,604 | INFO |   q2_prompts_dev_00031: 200 tokens
+2026-10-31 09:22:21,590 | INFO |   q2_prompts_dev_00032: 200 tokens
+2026-10-31 09:22:28,529 | INFO |   q2_prompts_dev_00033: 200 tokens
+2026-10-31 09:22:36,730 | INFO |   q2_prompts_dev_00034: 200 tokens
+2026-10-31 09:22:44,526 | INFO |   q2_prompts_dev_00035: 200 tokens
+2026-10-31 09:22:52,783 | INFO |   q2_prompts_dev_00036: 200 tokens
+2026-10-31 09:23:01,062 | INFO |   q2_prompts_dev_00037: 200 tokens
+2026-10-31 09:23:09,351 | INFO |   q2_prompts_dev_00038: 200 tokens
+2026-10-31 09:23:17,232 | INFO |   q2_prompts_dev_00039: 200 tokens
+2026-10-31 09:23:25,597 | INFO |   q2_prompts_dev_00040: 200 tokens
+2026-10-31 09:23:33,345 | INFO |   q2_prompts_dev_00041: 200 tokens
+2026-10-31 09:23:41,289 | INFO |   q2_prompts_dev_00042: 200 tokens
+2026-10-31 09:23:49,218 | INFO |   q2_prompts_dev_00043: 200 tokens
+2026-10-31 09:23:57,496 | INFO |   q2_prompts_dev_00044: 200 tokens
+2026-10-31 09:24:05,315 | INFO |   q2_prompts_dev_00045: 200 tokens
+2026-10-31 09:24:12,887 | INFO |   q2_prompts_dev_00046: 200 tokens
+2026-10-31 09:24:19,930 | INFO |   q2_prompts_dev_00047: 200 tokens
+2026-10-31 09:24:28,015 | INFO |   q2_prompts_dev_00048: 200 tokens
+2026-10-31 09:24:35,818 | INFO |   q2_prompts_dev_00049: 200 tokens
+2026-10-31 09:24:43,840 | INFO |   q2_prompts_dev_00050: 200 tokens
+2026-10-31 09:24:51,495 | INFO |   q2_prompts_dev_00051: 200 tokens
+2026-10-31 09:24:59,646 | INFO |   q2_prompts_dev_00052: 200 tokens
+2026-10-31 09:25:07,159 | INFO |   q2_prompts_dev_00053: 200 tokens
+2026-10-31 09:25:14,623 | INFO |   q2_prompts_dev_00054: 200 tokens
+2026-10-31 09:25:22,390 | INFO |   q2_prompts_dev_00055: 200 tokens
+2026-10-31 09:25:29,552 | INFO |   q2_prompts_dev_00056: 200 tokens
+2026-10-31 09:25:37,491 | INFO |   q2_prompts_dev_00057: 200 tokens
+2026-10-31 09:25:45,717 | INFO |   q2_prompts_dev_00058: 200 tokens
+2026-10-31 09:25:54,005 | INFO |   q2_prompts_dev_00059: 200 tokens
+2026-10-31 09:26:01,869 | INFO |   q2_prompts_dev_00060: 200 tokens
+2026-10-31 09:26:10,198 | INFO |   q2_prompts_dev_00061: 200 tokens
+2026-10-31 09:26:18,399 | INFO |   q2_prompts_dev_00062: 200 tokens
+2026-10-31 09:26:25,839 | INFO |   q2_prompts_dev_00063: 200 tokens
+2026-10-31 09:26:33,330 | INFO |   q2_prompts_dev_00064: 200 tokens
+2026-10-31 09:26:41,340 | INFO |   q2_prompts_dev_00065: 200 tokens
+2026-10-31 09:26:49,426 | INFO |   q2_prompts_dev_00066: 200 tokens
+2026-10-31 09:26:57,347 | INFO |   q2_prompts_dev_00067: 200 tokens
+2026-10-31 09:27:05,680 | INFO |   q2_prompts_dev_00068: 200 tokens
+2026-10-31 09:27:13,229 | INFO |   q2_prompts_dev_00069: 200 tokens
+2026-10-31 09:27:21,413 | INFO |   q2_prompts_dev_00070: 200 tokens
+2026-10-31 09:27:29,820 | INFO |   q2_prompts_dev_00071: 200 tokens
+2026-10-31 09:27:38,003 | INFO |   q2_prompts_dev_00072: 200 tokens
+2026-10-31 09:27:46,012 | INFO |   q2_prompts_dev_00073: 200 tokens
+2026-10-31 09:27:54,188 | INFO |   q2_prompts_dev_00074: 200 tokens
+2026-10-31 09:28:02,244 | INFO |   q2_prompts_dev_00075: 200 tokens
+2026-10-31 09:28:10,468 | INFO |   q2_prompts_dev_00076: 200 tokens
+2026-10-31 09:28:17,890 | INFO |   q2_prompts_dev_00077: 200 tokens
+2026-10-31 09:28:25,181 | INFO |   q2_prompts_dev_00078: 200 tokens
+2026-10-31 09:28:33,390 | INFO |   q2_prompts_dev_00079: 200 tokens
+2026-10-31 09:28:40,016 | INFO |   q2_prompts_dev_00080: 200 tokens
+2026-10-31 09:28:47,688 | INFO |   q2_prompts_dev_00081: 200 tokens
+2026-10-31 09:28:55,406 | INFO |   q2_prompts_dev_00082: 200 tokens
+2026-10-31 09:29:03,578 | INFO |   q2_prompts_dev_00083: 200 tokens
+2026-10-31 09:29:11,366 | INFO |   q2_prompts_dev_00084: 200 tokens
+2026-10-31 09:29:18,926 | INFO |   q2_prompts_dev_00085: 200 tokens
+2026-10-31 09:29:26,642 | INFO |   q2_prompts_dev_00086: 200 tokens
+2026-10-31 09:29:34,868 | INFO |   q2_prompts_dev_00087: 200 tokens
+2026-10-31 09:29:42,393 | INFO |   q2_prompts_dev_00088: 200 tokens
+2026-10-31 09:29:50,588 | INFO |   q2_prompts_dev_00089: 200 tokens
+2026-10-31 09:29:58,324 | INFO |   q2_prompts_dev_00090: 200 tokens
+2026-10-31 09:30:06,299 | INFO |   q2_prompts_dev_00091: 200 tokens
+2026-10-31 09:30:14,289 | INFO |   q2_prompts_dev_00092: 200 tokens
+2026-10-31 09:30:22,127 | INFO |   q2_prompts_dev_00093: 200 tokens
+2026-10-31 09:30:29,655 | INFO |   q2_prompts_dev_00094: 200 tokens
+2026-10-31 09:30:37,592 | INFO |   q2_prompts_dev_00095: 200 tokens
+2026-10-31 09:30:44,747 | INFO |   q2_prompts_dev_00096: 200 tokens
+2026-10-31 09:30:53,132 | INFO |   q2_prompts_dev_00097: 200 tokens
+2026-10-31 09:31:01,055 | INFO |   q2_prompts_dev_00098: 200 tokens
+2026-10-31 09:31:09,024 | INFO |   q2_prompts_dev_00099: 200 tokens
+2026-10-31 09:31:09,025 | INFO | Generation complete → D:/LLM/Assignment 2/out/Q2\generated_42.jsonl
+Generation complete.
+--- Task 2: Perturb ---
+============================================
+ Task 2: Apply Perturbations
+ Input:  /d/LLM/Assignment 2/out/Q2/generated_42.jsonl
+ Output: /d/LLM/Assignment 2/out/Q2
+ Seed:   42
+============================================
+2026-10-31 09:31:12,920 | INFO | Loading base tokenizer from Qwen/Qwen2.5-1.5B
+2026-10-31 09:31:13,224 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-10-31 09:31:13,488 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 09:31:13,736 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-31 09:31:14,187 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-10-31 09:31:14,194 | INFO | Loaded 100 examples from D:/LLM/Assignment 2/out/Q2/generated_42.jsonl
+2026-10-31 09:31:14,194 | INFO | Applying 'clean' → D:/LLM/Assignment 2/out/Q2\generated_clean_42.jsonl
+2026-10-31 09:31:14,203 | INFO |   'clean' done → D:/LLM/Assignment 2/out/Q2\generated_clean_42.jsonl
+2026-10-31 09:31:14,203 | INFO | Applying 'short' → D:/LLM/Assignment 2/out/Q2\generated_short_42.jsonl
+2026-10-31 09:31:14,207 | INFO |   'short' done → D:/LLM/Assignment 2/out/Q2\generated_short_42.jsonl
+2026-10-31 09:31:14,207 | INFO | Applying 'substitution' → D:/LLM/Assignment 2/out/Q2\generated_substitution_42.jsonl
+2026-10-31 09:31:14,883 | INFO |   'substitution' done → D:/LLM/Assignment 2/out/Q2\generated_substitution_42.jsonl
+2026-10-31 09:31:14,883 | INFO | Applying 'paraphrase' → D:/LLM/Assignment 2/out/Q2\generated_paraphrase_42.jsonl
+2026-10-31 09:31:14,883 | INFO | Loading Qwen/Qwen2.5-1.5B-Instruct for paraphrase
+2026-10-31 09:31:15,138 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-10-31 09:31:15,382 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 09:31:15,618 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-31 09:31:16,073 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-10-31 09:31:16,314 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 338/338 [00:01<00:00, 192.56it/s]
+2026-10-31 09:31:19,578 | INFO | HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-10-31 09:40:04,167 | INFO |   'paraphrase' done → D:/LLM/Assignment 2/out/Q2\generated_paraphrase_42.jsonl
+2026-10-31 09:40:04,167 | INFO | All perturbations complete.
+Perturbation complete.
+--- Task 2: Detect all conditions ---
+============================================
+ Task 2: Detect Watermark
+ Input:  /d/LLM/Assignment 2/out/Q2/generated_clean_42.jsonl
+ Output: /d/LLM/Assignment 2/out/Q2
+============================================
+2026-10-31 09:40:08,094 | INFO | Loaded key (32 bytes)
+2026-10-31 09:40:08,094 | INFO | Loading tokenizer from Qwen/Qwen2.5-1.5B
+2026-10-31 09:40:08,418 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-10-31 09:40:08,685 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 09:40:08,930 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-31 09:40:09,409 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-10-31 09:40:09,416 | INFO | Detecting watermarks in D:/LLM/Assignment 2/out/Q2/generated_clean_42.jsonl
+2026-10-31 09:40:18,605 | INFO |   Processed 50 texts
+2026-10-31 09:40:27,722 | INFO |   Processed 100 texts
+2026-10-31 09:40:27,722 | INFO | Scores written to D:/LLM/Assignment 2/out/Q2\scores_clean.jsonl
+Detection complete.
+============================================
+ Task 2: Detect Watermark
+ Input:  /d/LLM/Assignment 2/out/Q2/generated_short_42.jsonl
+ Output: /d/LLM/Assignment 2/out/Q2
+============================================
+2026-10-31 09:40:31,321 | INFO | Loaded key (32 bytes)
+2026-10-31 09:40:31,321 | INFO | Loading tokenizer from Qwen/Qwen2.5-1.5B
+2026-10-31 09:40:31,588 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-10-31 09:40:31,845 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 09:40:32,095 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-31 09:40:32,562 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-10-31 09:40:32,567 | INFO | Detecting watermarks in D:/LLM/Assignment 2/out/Q2/generated_short_42.jsonl
+2026-10-31 09:40:34,876 | INFO |   Processed 50 texts
+2026-10-31 09:40:37,153 | INFO |   Processed 100 texts
+2026-10-31 09:40:37,153 | INFO | Scores written to D:/LLM/Assignment 2/out/Q2\scores_short.jsonl
+Detection complete.
+============================================
+ Task 2: Detect Watermark
+ Input:  /d/LLM/Assignment 2/out/Q2/generated_substitution_42.jsonl
+ Output: /d/LLM/Assignment 2/out/Q2
+============================================
+2026-10-31 09:40:40,842 | INFO | Loaded key (32 bytes)
+2026-10-31 09:40:40,842 | INFO | Loading tokenizer from Qwen/Qwen2.5-1.5B
+2026-10-31 09:40:41,112 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-10-31 09:40:41,367 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 09:40:41,609 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-31 09:40:42,080 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-10-31 09:40:42,086 | INFO | Detecting watermarks in D:/LLM/Assignment 2/out/Q2/generated_substitution_42.jsonl
+2026-10-31 09:40:50,939 | INFO |   Processed 50 texts
+2026-10-31 09:41:00,293 | INFO |   Processed 100 texts
+2026-10-31 09:41:00,293 | INFO | Scores written to D:/LLM/Assignment 2/out/Q2\scores_substitution.jsonl
+Detection complete.
+============================================
+ Task 2: Detect Watermark
+ Input:  /d/LLM/Assignment 2/out/Q2/generated_paraphrase_42.jsonl
+ Output: /d/LLM/Assignment 2/out/Q2
+============================================
+2026-10-31 09:41:03,946 | INFO | Loaded key (32 bytes)
+2026-10-31 09:41:03,946 | INFO | Loading tokenizer from Qwen/Qwen2.5-1.5B
+2026-10-31 09:41:04,225 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-10-31 09:41:04,470 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 09:41:04,701 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-31 09:41:05,176 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-10-31 09:41:05,181 | INFO | Detecting watermarks in D:/LLM/Assignment 2/out/Q2/generated_paraphrase_42.jsonl
+2026-10-31 09:41:13,291 | INFO |   Processed 50 texts
+2026-10-31 09:41:21,171 | INFO |   Processed 100 texts
+2026-10-31 09:41:21,171 | INFO | Scores written to D:/LLM/Assignment 2/out/Q2\scores_paraphrase.jsonl
+Detection complete.
+Wrote 100 human texts to D:/LLM/Assignment 2/out/Q2/human.jsonl
+============================================
+ Task 2: Detect Watermark
+ Input:  /d/LLM/Assignment 2/out/Q2/human.jsonl
+ Output: /d/LLM/Assignment 2/out/Q2
+============================================
+2026-10-31 09:41:25,119 | INFO | Loaded key (32 bytes)
+2026-10-31 09:41:25,119 | INFO | Loading tokenizer from Qwen/Qwen2.5-1.5B
+2026-10-31 09:41:25,436 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-10-31 09:41:25,687 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 09:41:25,921 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-31 09:41:26,367 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-10-31 09:41:26,369 | INFO | Detecting watermarks in D:/LLM/Assignment 2/out/Q2/human.jsonl
+2026-10-31 09:41:35,654 | INFO |   Processed 50 texts
+2026-10-31 09:41:44,997 | INFO |   Processed 100 texts
+2026-10-31 09:41:44,998 | INFO | Scores written to D:/LLM/Assignment 2/out/Q2\scores_human.jsonl
+Detection complete.
+Wrote 100 short human texts
+============================================
+ Task 2: Detect Watermark
+ Input:  /d/LLM/Assignment 2/out/Q2/human_short.jsonl
+ Output: /d/LLM/Assignment 2/out/Q2
+============================================
+2026-10-31 09:41:53,722 | INFO | Loaded key (32 bytes)
+2026-10-31 09:41:53,722 | INFO | Loading tokenizer from Qwen/Qwen2.5-1.5B
+2026-10-31 09:41:53,984 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-10-31 09:41:54,226 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 09:41:54,467 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-31 09:41:54,968 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-10-31 09:41:54,974 | INFO | Detecting watermarks in D:/LLM/Assignment 2/out/Q2/human_short.jsonl
+2026-10-31 09:41:57,342 | INFO |   Processed 50 texts
+2026-10-31 09:41:59,691 | INFO |   Processed 100 texts
+2026-10-31 09:41:59,691 | INFO | Scores written to D:/LLM/Assignment 2/out/Q2\scores_human_short.jsonl
+Detection complete.
+--- Task 2: Evaluation ---
+
+=== Task 2 Detection Results ===
+Condition                     τ      TPR
+------------------------------------------
+clean                    2.5924   0.2400
+short                    3.6735   0.0800
+substitution             2.5924   0.1100
+paraphrase               2.5924   0.0600
+------------------------------------------
+S_det = 0.1225
+
+  TASK 3: Calibrated QA with Abstention   
+--- Task 3: Training ---
+============================================
+ Task 3: Training Calibrated QA
+ Output: /d/LLM/Assignment 2/out/Q3
+============================================
+2026-10-31 09:42:03,625 | INFO | Device: cuda
+2026-10-31 09:42:03,625 | INFO | Loading Qwen/Qwen2.5-1.5B-Instruct
+2026-10-31 09:42:03,888 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-10-31 09:42:04,146 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 09:42:04,383 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-31 09:42:04,864 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-10-31 09:42:05,116 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[transformers] The following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 338/338 [00:01<00:00, 195.11it/s]
+2026-10-31 09:42:08,182 | INFO | HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-10-31 09:42:08,201 | INFO | Train: 2000, Dev: 500
+2026-10-31 09:42:08,201 | INFO | Generating train answers (k=3)...
+2026-10-31 09:43:04,422 | INFO |   Question 100/2000
+2026-10-31 09:44:02,094 | INFO |   Question 200/2000
+2026-10-31 09:45:02,595 | INFO |   Question 300/2000
+2026-10-31 09:46:04,842 | INFO |   Question 400/2000
+2026-10-31 09:47:12,882 | INFO |   Question 500/2000
+2026-10-31 09:48:21,524 | INFO |   Question 600/2000
+2026-10-31 09:49:24,569 | INFO |   Question 700/2000
+2026-10-31 09:50:20,994 | INFO |   Question 800/2000
+2026-10-31 09:51:21,626 | INFO |   Question 900/2000
+2026-10-31 09:52:34,118 | INFO |   Question 1000/2000
+2026-10-31 09:53:41,417 | INFO |   Question 1100/2000
+2026-10-31 09:54:44,955 | INFO |   Question 1200/2000
+2026-10-31 09:55:52,983 | INFO |   Question 1300/2000
+2026-10-31 09:56:55,727 | INFO |   Question 1400/2000
+2026-10-31 09:57:57,754 | INFO |   Question 1500/2000
+2026-10-31 09:58:59,302 | INFO |   Question 1600/2000
+2026-10-31 10:00:02,277 | INFO |   Question 1700/2000
+2026-10-31 10:01:06,481 | INFO |   Question 1800/2000
+2026-10-31 10:02:05,648 | INFO |   Question 1900/2000
+2026-10-31 10:03:11,406 | INFO |   Question 2000/2000
+2026-10-31 10:03:11,896 | INFO | Train accuracy (majority vote): 0.1505
+2026-10-31 10:03:11,896 | INFO | Fitting hidden-state probe...
+2026-10-31 10:03:11,947 | INFO | Probe train accuracy: 0.8495
+2026-10-31 10:03:11,975 | INFO | Generating dev answers (k=5)...
+2026-10-31 10:05:04,303 | INFO |   Question 100/500
+2026-10-31 10:06:49,843 | INFO |   Question 200/500
+2026-10-31 10:08:41,742 | INFO |   Question 300/500
+2026-10-31 10:10:37,107 | INFO |   Question 400/500
+2026-10-31 10:12:16,212 | INFO |   Question 500/500
+2026-10-31 10:12:16,979 | INFO | Dev accuracy (majority vote): 0.1480
+2026-10-31 10:12:16,988 | INFO | Fitting temperature scaling...
+2026-10-31 10:12:16,991 | INFO | Temperature scaling: T=2.3929
+2026-10-31 10:12:16,991 | INFO | Fitting abstention threshold...
+2026-10-31 10:12:16,991 | INFO | Best abstention threshold: τ=0.0240 (selective score=0.0000)
+2026-10-31 10:12:16,992 | INFO | Artifacts saved to D:/LLM/Assignment 2/out/Q3\calibration_artifacts.pkl
+2026-10-31 10:12:16,992 | INFO | Task 3 training complete.
+Training complete. Artifacts saved to: /d/LLM/Assignment 2/out/Q3
+--- Task 3: Inference (in-domain dev) ---
+============================================
+ Task 3: Inference
+ Input:  /d/LLM/Assignment 2/Q3/data/public/q3_qa_dev.jsonl
+ Output: /d/LLM/Assignment 2/out/Q3/pred_Assignment
+============================================
+2026-10-31 10:12:20,965 | INFO | Device: cuda
+2026-10-31 10:12:20,986 | INFO | Loaded calibration artifacts from D:/LLM/Assignment 2/out/Q3
+2026-10-31 10:12:20,986 | INFO |   tau=0.0240, T=2.3929
+2026-10-31 10:12:20,986 | INFO | Loading Qwen/Qwen2.5-1.5B-Instruct
+2026-10-31 10:12:21,316 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-10-31 10:12:21,580 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 10:12:21,825 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-31 10:12:22,329 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-10-31 10:12:22,576 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[transformers] The following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 338/338 [00:01<00:00, 194.61it/s]
+2026-10-31 10:12:25,613 | INFO | HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-10-31 10:12:25,615 | INFO | Processing D:/LLM/Assignment 2/Q3/data/public/q3_qa_dev.jsonl → D:/LLM/Assignment 2/out/Q3\pred_q3_qa_dev.jsonl
+2026-10-31 10:13:06,929 | INFO |   Processed 50 questions
+2026-10-31 10:13:57,907 | INFO |   Processed 100 questions
+2026-10-31 10:14:45,699 | INFO |   Processed 150 questions
+2026-10-31 10:15:40,946 | INFO |   Processed 200 questions
+2026-10-31 10:16:34,429 | INFO |   Processed 250 questions
+2026-10-31 10:17:37,177 | INFO |   Processed 300 questions
+2026-10-31 10:18:34,562 | INFO |   Processed 350 questions
+2026-10-31 10:19:26,252 | INFO |   Processed 400 questions
+2026-10-31 10:20:15,123 | INFO |   Processed 450 questions
+2026-10-31 10:21:04,804 | INFO |   Processed 500 questions
+2026-10-31 10:21:04,804 | INFO | Inference complete → D:/LLM/Assignment 2/out/Q3\pred_q3_qa_dev.jsonl
+Inference complete.
+--- Task 3: Inference (out-of-domain dev) ---
+============================================
+ Task 3: Inference
+ Input:  /d/LLM/Assignment 2/Q3/data/public/q3_qa_dev_ood.jsonl
+ Output: /d/LLM/Assignment 2/out/Q3/pred_Assignment
+============================================
+2026-10-31 10:21:08,652 | INFO | Device: cuda
+2026-10-31 10:21:08,674 | INFO | Loaded calibration artifacts from D:/LLM/Assignment 2/out/Q3
+2026-10-31 10:21:08,674 | INFO |   tau=0.0240, T=2.3929
+2026-10-31 10:21:08,674 | INFO | Loading Qwen/Qwen2.5-1.5B-Instruct
+2026-10-31 10:21:09,003 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-10-31 10:21:09,255 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 10:21:09,494 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-31 10:21:09,954 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+2026-10-31 10:21:10,191 | INFO | HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B-Instruct "HTTP/1.1 200 OK"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+[transformers] The following generation flags are not valid and may be ignored: ['output_hidden_states']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Loading weights: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 338/338 [00:01<00:00, 193.28it/s]
+2026-10-31 10:21:13,445 | INFO | HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-10-31 10:21:13,446 | INFO | Processing D:/LLM/Assignment 2/Q3/data/public/q3_qa_dev_ood.jsonl → D:/LLM/Assignment 2/out/Q3\pred_q3_qa_dev_ood.jsonl
+2026-10-31 10:21:51,560 | INFO |   Processed 50 questions
+2026-10-31 10:22:24,105 | INFO |   Processed 100 questions
+2026-10-31 10:23:02,636 | INFO |   Processed 150 questions
+2026-10-31 10:23:38,304 | INFO |   Processed 200 questions
+2026-10-31 10:23:38,304 | INFO | Inference complete → D:/LLM/Assignment 2/out/Q3\pred_q3_qa_dev_ood.jsonl
+Inference complete.
+--- Task 3: Evaluation ---
+
+=== Task 3 Results (pred_q3_qa_dev.jsonl) ===
+  Accuracy:       0.1540  (77/500)
+  AUROC:          0.7805
+  ECE:            0.0917  (1-ECE: 0.9083)
+  Coverage:       0.7480  (374/500)
+  Risk:           0.8102
+  Selective:      0.0000
+  Set Score:      0.5629
+
+=== Task 3 Results (pred_q3_qa_dev_ood.jsonl) ===
+  Accuracy:       0.0850  (17/200)
+  AUROC:          0.8304
+  ECE:            0.1140  (1-ECE: 0.8860)
+  Coverage:       0.6800  (136/200)
+  Risk:           0.8824
+  Selective:      0.0000
+  Set Score:      0.5722
+
+  All tasks completed successfully!       
+(.venv) 
+Modhusudan@DESKTOP-MHIRS6B MINGW64 /d/LLM/Assignment 2
+$ 
